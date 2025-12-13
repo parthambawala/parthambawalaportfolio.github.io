@@ -1,354 +1,481 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Meta -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Parth Ambawala — Flutter Developer & Startup Founder</title>
-  <meta name="description" content="Parth Ambawala — Flutter developer, founder of Trendzia.co and Vaatchit App. Building modern apps, e-commerce solutions, and digital businesses." />
-  <meta name="author" content="Parth Ambawala" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Parth Ambawala — Expert Flutter & Full-Stack Developer | Portfolio</title>
+    <meta name="description" content="Parth Ambawala: Focused on scalable mobile application development (Flutter/Dart) and entrepreneurial ventures (Trendzia.co, Vaatchit App). Offering expert development services." />
+    <meta name="author" content="Parth Ambawala" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Parth Ambawala — Flutter Developer & Startup Founder" />
-  <meta property="og:description" content="Founder of Trendzia.co & Vaatchit App. Building modern apps, e-commerce platforms, and chat solutions." />
-  <meta property="og:image" content="https://yourdomain.com/assets/portfolio-preview.png" />
-  <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:title" content="Parth Ambawala — Flutter Expert & Founder" />
+    <meta property="og:description" content="Building high-performance mobile and web solutions with a focus on scalable architecture and user experience." />
+    <meta property="og:image" content="https://yourdomain.com/assets/portfolio-preview.png" />
+    <meta property="og:url" content="https://yourdomain.com" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <style>
-    :root {
-      --bg-dark: #071029;
-      --bg-darker: #0f1724;
-      --text-light: #eaf2fb;
-      --text-muted: rgba(255,255,255,0.72);
-      --accent1: #06b6d4;
-      --accent2: #7c3aed;
-      --glass: rgba(255,255,255,0.05);
-      --radius: 14px;
-      --maxw: 1100px;
-    }
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
-      color: var(--text-light);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: var(--maxw);
-      margin: auto;
-      padding: 20px;
-    }
+    <style>
+        /* --- CYBER-FLUX THEME V3.4 VARIABLES --- */
+        :root {
+            --bg-dark: #000000;
+            --bg-darker: #0c001c;
+            --text-light: #f0f8ff;
+            --text-muted: rgba(255,255,255,0.65);
+            --accent-neon-blue: #00ffff;
+            --accent-neon-pink: #ff00ff;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+            --radius: 12px;
+            --maxw: 1200px;
+            --timeline-line: rgba(0, 255, 255, 0.4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            min-height: 100vh;
+            background-image: linear-gradient(0deg, var(--bg-darker) 1px, transparent 1px), linear-gradient(90deg, var(--bg-darker) 1px, var(--bg-dark) 1px);
+            background-size: 50px 50px;
+            background-position: center;
+        }
+        .container { max-width: var(--maxw); margin: auto; padding: 20px; }
+        a { color: var(--accent-neon-blue); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: var(--accent-neon-pink); }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-      background: rgba(0,0,0,0.3);
-      border-radius: var(--radius);
-      padding: 12px 30px;
-      margin-bottom: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      animation: fadeDown 1s ease forwards;
-      flex-wrap: wrap; /* allow wrapping to avoid overflow */
-      min-width: 0;
-      overflow-x: visible;
-    }
-    @keyframes fadeDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        /* --- Header / Navigation (Desktop) --- */
+        header {
+            position: sticky; top: 15px; z-index: 10; backdrop-filter: blur(15px);
+            background: rgba(0,0,0,0.7); border: 1px solid var(--glass-border);
+            border-radius: var(--radius); padding: 12px 30px; margin-bottom: 50px;
+            display: flex; align-items: center; justify-content: space-between;
+            animation: fadeIn 1s ease forwards; flex-wrap: wrap;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .logo {
+            font-family: 'Fira Code', monospace; font-weight: 700; font-size: 24px;
+            background: linear-gradient(45deg, var(--accent-neon-blue), var(--accent-neon-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5); user-select: none; flex-shrink: 0; padding: 5px 0;
+        }
+        nav { display: flex; gap: 25px; align-items: center; flex-grow: 1; justify-content: flex-end; min-width: 0; }
+        nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 16px; transition: color 0.3s, text-shadow 0.3s; white-space: nowrap; }
+        nav a:hover { color: var(--accent-neon-blue); text-shadow: 0 0 6px var(--accent-neon-blue); }
+        .cta-btn {
+            background: var(--accent-neon-pink); color: var(--bg-dark);
+            padding: 10px 20px; border-radius: 999px;
+            font-weight: 700; text-decoration: none; white-space: nowrap;
+            display: inline-block; transition: transform 0.3s ease, box-shadow 0.3s;
+            margin-left: 20px; flex-shrink: 0; box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255, 0, 255, 0.7); }
 
-    .logo {
-      font-weight: 700;
-      font-size: 22px;
-      background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      color: #021025;
-      padding: 12px 0;
-      border-radius: var(--radius);
-      width: 56px;
-      text-align: center;
-      user-select: none;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      white-space: nowrap;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
+        /* --- Hero Section (Desktop) --- */
+        .hero { display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: center; padding-bottom: 50px; }
+        .text-card {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: var(--radius); padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            transition: all 0.5s;
+        }
+        .text-card:hover { border-color: var(--accent-neon-blue); }
+        .main-title { font-size: 52px; margin: 10px 0 20px 0; line-height: 1.1; }
+        .highlight-text {
+            background: linear-gradient(90deg, var(--accent-neon-blue), var(--accent-neon-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7); display: inline-block;
+        }
 
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap; /* allow wrapping so links won't overflow */
-      align-items: center;
-      flex-grow: 1;
-      justify-content: flex-end;
-      min-width: 0;
-      overflow-x: visible;
-    }
+        /* Full Image Card */
+        .image-card {
+            position: relative; height: 550px; border-radius: var(--radius); overflow: hidden;
+            background: var(--bg-darker); border: 2px solid var(--accent-neon-pink);
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.5); animation: float-tilt 6s ease-in-out infinite;
+        }
+        @keyframes float-tilt {
+            0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(0.5deg); }
+        }
+        .image-card img {
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;
+            filter: grayscale(10%); opacity: 0.9;
+        }
+        .image-card:hover img { transform: scale(1.05); filter: grayscale(0%); opacity: 1; }
+        .image-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9)); text-align: center;
+            font-size: 20px; font-weight: 700; color: var(--accent-neon-blue);
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
 
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      transition: color 0.2s;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    nav a:hover {
-      color: var(--accent1);
-    }
+        /* Skills/Tech Stack */
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .skill {
+            background: rgba(0,255,255,0.1); color: var(--accent-neon-blue);
+            padding: 8px 15px; border-radius: 4px; font-size: 14px;
+            font-weight: 500; border: 1px solid rgba(0,255,255,0.3);
+            transition: background 0.3s, box-shadow 0.3s; font-family: 'Fira Code', monospace;
+            display: flex; align-items: center;
+        }
+        .skill i { margin-right: 6px; font-size: 16px; }
+        .skill:hover {
+            background: var(--accent-neon-pink); color: var(--bg-dark);
+            border-color: var(--accent-neon-pink); box-shadow: 0 0 10px var(--accent-neon-pink);
+        }
 
-    .cta-btn {
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      color: #021025;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      text-decoration: none;
-      white-space: nowrap;
-      display: inline-block;
-      transition: transform 0.3s ease;
-      margin-left: 20px;
-      flex-shrink: 0;
-    }
-    .cta-btn:hover {
-      transform: scale(1.05);
-    }
+        /* --- Sections & Titles --- */
+        section {margin-top: 100px; padding: 0 20px;}
+        section:nth-child(even) { background: rgba(255,255,255,0.03); padding: 50px 40px; border-radius: var(--radius); margin-left: -20px; margin-right: -20px;}
+        h2 {
+            margin-bottom: 40px; font-size: 38px; font-weight: 700; text-align: center;
+            background: linear-gradient(90deg, var(--accent-neon-blue), var(--accent-neon-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+        h2::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%;
+            transform: translateX(-50%); width: 80px; height: 3px;
+            background: linear-gradient(90deg, var(--accent-neon-blue), var(--accent-neon-pink));
+            border-radius: 5px;
+        }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 40px;
-      align-items: center;
-    }
-    @media (max-width: 880px) {
-      .hero {grid-template-columns: 1fr;}
-    }
-    .card {
-      background: var(--glass);
-      border-radius: var(--radius);
-      padding: 35px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
-    }
-    .card:hover {transform: translateY(-5px);}
-    .avatar {
-      width: 150px; height: 150px;
-      border-radius: 50%;
-      margin: auto;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      display: flex; align-items: center; justify-content: center;
-      animation: float 3s ease-in-out infinite;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
-    }
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .avatar img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.20);
-    }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 15px; }
-    .skill {
-      background: rgba(255,255,255,0.08);
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .skill:hover { background: linear-gradient(90deg, var(--accent1), var(--accent2)); color:#021025; }
+        /* --- Cards (Startups/Services/Testimonials) --- */
+        .cards-row { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .startup-card, .service-card, .project-card, .testimonial-card {
+            flex: 1; min-width: 300px; max-width: 350px;
+            background: var(--glass); border: 1px solid var(--glass-border);
+            padding: 30px; border-radius: var(--radius);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s;
+        }
+        .startup-card:hover, .service-card:hover, .project-card:hover {
+            transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 15px var(--accent-neon-blue);
+            border-color: var(--accent-neon-blue);
+        }
+        .card-title { font-size: 24px; color: var(--accent-neon-pink); margin-bottom: 10px; }
+        .card-title i { margin-right: 8px; color: var(--accent-neon-blue); }
+        .startup-card ul { margin: 15px 0; padding-left: 20px; color: var(--text-muted);}
+        .project-card a, .startup-card a { margin-top: 15px; display: inline-block; font-weight: 600; }
+        
+        /* --- TIMELINE (Desktop) --- */
+        .timeline { position: relative; max-width: 1000px; margin: auto; padding: 20px 0; }
+        .timeline::after {
+            content: ''; position: absolute; width: 3px; background: var(--timeline-line);
+            top: 0; bottom: 0; left: 50%; margin-left: -1.5px;
+        }
+        .timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+        .timeline-item::after {
+            content: ''; position: absolute; width: 18px; height: 18px; right: -9px;
+            background-color: var(--bg-dark); border: 3px solid var(--accent-neon-pink);
+            top: 30px; border-radius: 50%; z-index: 1; box-shadow: 0 0 10px var(--accent-neon-pink);
+        }
+        .left { left: 0; }
+        .right { left: 50%; }
+        .right::after { left: -9px; } 
+        
+        .timeline-item .content {
+            padding: 25px; background: var(--glass); position: relative;
+            border-radius: var(--radius); transition: border 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--glass-border);
+        }
+        .timeline-item .content:hover {
+            border: 1px solid var(--accent-neon-blue);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.8), 0 0 10px var(--accent-neon-blue);
+        }
+        .timeline-item .content h4 {
+            color: var(--accent-neon-pink); margin-bottom: 5px; font-size: 20px;
+            display: flex; align-items: center;
+        }
+        .timeline-item .content h4 i { margin-right: 10px; color: var(--accent-neon-blue); font-size: 22px; }
+        .timeline-date {
+            color: var(--accent-neon-blue); font-size: 14px; margin-bottom: 10px;
+            font-family: 'Fira Code', monospace;
+        }
 
-    section {margin-top: 70px;}
-    section:nth-child(even) { background: rgba(255,255,255,0.02); padding: 40px; border-radius: var(--radius);}
-    h2 {
-      margin-bottom: 15px;
-      font-size: 28px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .cards-row { display: flex; flex-wrap: wrap; gap: 20px; }
-    .startup-card, .service-card {
-      flex: 1; min-width: 280px;
-      background: var(--glass);
-      padding: 22px;
-      border-radius: var(--radius);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .startup-card:hover, .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    }
-    .startup-card ul { margin: 12px 0; padding-left: 20px;}
-    footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--text-muted);
-      padding-top: 25px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
+        /* --- Testimonials (for context) --- */
+        .testimonial-card {
+            max-width: 450px; margin: 20px; border-left: 4px solid var(--accent-neon-pink);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5); font-style: italic; color: var(--text-muted);
+            line-height: 1.8; flex-grow: 1; flex-basis: 40%; min-width: 350px; transition: background 0.3s;
+        }
+        .testimonial-card:hover { background: rgba(255,255,255,0.1); }
+        .testimonial-author { margin-top: 15px; font-style: normal; color: var(--accent-neon-blue); font-weight: 600; }
 
-    /* Responsive Header Modifications */
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 12px 20px;
-      }
-      .logo {
-        font-size: 18px;
-        width: 48px;
-        margin-bottom: 10px;
-      }
-      nav {
-        justify-content: flex-start;
-        gap: 10px;
-        font-size: 14px;
-        flex-wrap: wrap;
-      }
-      .cta-btn {
-        font-size: 14px;
-        padding: 8px 12px;
-        margin-left: 0;
-      }
-    }
-  </style>
+        /* --- Footer --- */
+        footer {
+            margin-top: 100px; text-align: center; font-size: 14px;
+            color: var(--text-muted); padding: 40px 0 20px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* ======================================= */
+        /* === MOBILE VIEW PERFECTION (<= 768px) === */
+        /* ======================================= */
+        @media (max-width: 768px) {
+            /* GENERAL LAYOUT & PADDING */
+            .container { padding: 10px; }
+            section { padding: 0; margin-top: 60px; }
+            section:nth-child(even) { padding: 40px 10px; margin-left: -10px; margin-right: -10px; }
+            h2 { font-size: 32px; margin-bottom: 30px; }
+
+            /* HEADER & NAVIGATION */
+            header {
+                padding: 10px; top: 0; margin-bottom: 30px;
+                /* Allow header to stack items vertically if needed */
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo { margin-bottom: 10px; }
+            nav {
+                /* Navigation links stacked horizontally */
+                width: 100%;
+                justify-content: space-around;
+                gap: 5px;
+            }
+            nav a { font-size: 14px; padding: 5px 0; }
+            .cta-btn { margin-left: 0; padding: 8px 15px; font-size: 14px; }
+            
+            /* HERO SECTION */
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .image-card {
+                order: -1; /* Place image first on mobile */
+                height: 350px; /* Reduced height for mobile */
+                margin-bottom: 20px;
+            }
+            .text-card {
+                padding: 30px 20px; /* Reduced card padding */
+            }
+            .main-title {
+                font-size: 36px; /* Reduced title size */
+                margin-top: 0;
+            }
+
+            /* SKILLS WRAPPING */
+            .skills { justify-content: flex-start; }
+            .skill {
+                padding: 7px 12px;
+                font-size: 13px;
+            }
+
+            /* TIMELINE (Existing Mobile Fixes - Ensure these remain) */
+            .timeline::after { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
+            .timeline-item::after { left: 10px; right: auto; margin-left: 0; top: 25px; }
+            .right { left: 0%; }
+            .right::after { left: 10px; } 
+
+            /* CARDS (Startups/Services) */
+            .startup-card, .service-card, .project-card, .testimonial-card {
+                /* Cards take full width with appropriate padding */
+                min-width: 100%;
+                max-width: 100%;
+            }
+            .cards-row { gap: 20px; }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
+    <div class="container">
 
-    <header>
-      <div class="logo">PA</div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#startups">Startups</a>
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-        <!-- <a href="#contact">Contact</a> -->
+        <header>
+            <div class="logo">P.AMBAWALA</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#tech-stack">Tech</a>
+                <a href="#experience">Experience</a>
+                <a href="#startups">Ventures</a>
+                <a href="#services">Services</a>
+                <a class="cta-btn" href="https://wa.me/919104974046" target="_blank" rel="noopener noreferrer">Collaborate</a>
+            </nav>
+        </header>
 
-        <a class="cta-btn" href="#contact">Hire Me</a>
-      </nav>
-    </header>
+        <div class="hero">
+            <div class="text-card" data-aos="fade-right" data-aos-duration="1200">
+                <p style="font-size:18px; color:var(--accent-neon-blue);">Hi, I'm Parth Ambawala</p>
+                <h1 class="main-title">
+                    Building <span class="highlight-text">Scalable</span> and <span class="highlight-text">Intuitive</span> Digital Products
+                </h1>
+                <p style="font-size:18px; margin-bottom:20px; color:var(--text-muted);">
+                    Expert **Flutter & Full-Stack Developer** driving innovation through my startups, **Trendzia.co** (E-Commerce) and **Vaatchit App** (Secure Messaging). I turn complex ideas into elegant, high-performance applications.
+                </p>
+                <a class="cta-btn" href="https://wa.me/919104974046" target="_blank" rel="noopener noreferrer" style="margin-left: 0;">Get a Free Consultation →</a>
+            </div>
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="card" data-aos="fade-right">
-        <p style="font-size:18px; opacity:0.8;">Hello — I’m</p>
-        <h1 style="font-size:40px; margin:10px 0;">Parth Ambawala</h1>
-        <p style="font-size:18px; margin-bottom:20px;">Flutter Developer & Founder of <strong>Trendzia.co</strong> and <strong>Vaatchit App</strong> — creating modern shopping experiences and secure chat solutions.</p>
-        <a class="cta-btn" href="#contact">Work with Me</a>
-      </div>
-      <div class="card" data-aos="fade-left" style="text-align:center;">
-        <div class="avatar">
-          <img src="ME.jpeg" alt="Parth Ambawala">
+            <div class="image-card" data-aos="fade-left" data-aos-duration="1200">
+                <img src="ME.jpeg" alt="Parth Ambawala Full Profile">
+                <div class="image-overlay">
+                    Flutter Expert | Startup Founder | Architectural Focus
+                </div>
+            </div>
         </div>
-        <h3 style="margin-top:15px;">Parth Ambawala</h3>
-        <p style="color:var(--text-muted); margin-bottom:10px;">Flutter Developer • Entrepreneur</p>
-        <div class="skills">
-          <div class="skill">Flutter</div>
-          <div class="skill">Dart</div>
-          <div class="skill">Firebase</div>
-          <div class="skill">E-Commerce</div>
-          <div class="skill">Chat Apps</div>
-        </div>
-      </div>
+
+        <section id="about" data-aos="fade-up" data-aos-duration="1000">
+            <h2>About Me: The Developer & The Founder</h2>
+            <p style="font-size:17px; max-width: 800px; margin: auto; text-align: center; color:var(--text-light);">
+                My career is defined by a dual focus: deep technical skill in **Flutter (Dart)** for cross-platform app development and a strategic, entrepreneurial approach to product creation. I don't just write code; I design entire systems that are efficient, maintainable, and directly serve business goals. From implementing secure Firebase backends to optimizing complex UI/UX, my goal is always to deliver value that scales.
+            </p>
+        </section>
+
+        <section id="tech-stack" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Technology Stack & Core Expertise</h2>
+            <div style="max-width: 900px; margin: auto;">
+                <h3 style="color:var(--accent-neon-blue); margin-bottom: 15px;">Frontend & Mobile</h3>
+                <div class="skills" style="justify-content: center;">
+                    <div class="skill"><i class="fa-brands fa-d-and-d"></i> Dart</div>
+                    <div class="skill"><i class="fa-brands fa-rebel"></i> Flutter</div>
+                    <div class="skill"><i class="fa-brands fa-react"></i> React/Next.js</div>
+                    <div class="skill"><i class="fa-brands fa-js"></i> JavaScript/TypeScript</div>
+                    <div class="skill"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</div>
+                </div>
+                <h3 style="color:var(--accent-neon-blue); margin-top: 40px; margin-bottom: 15px;">Backend & Database</h3>
+                <div class="skills" style="justify-content: center;">
+                    <div class="skill"><i class="fa-solid fa-fire"></i> Firebase (Auth, Firestore)</div>
+                    <div class="skill"><i class="fa-solid fa-server"></i> Node.js/Express</div>
+                    <div class="skill"><i class="fa-solid fa-database"></i> MongoDB</div>
+                    <div class="skill"><i class="fa-solid fa-database"></i> SQL (PostgreSQL/MySQL)</div>
+                    <div class="skill"><i class="fa-solid fa-cube"></i> REST/GraphQL</div>
+                </div>
+                <h3 style="color:var(--accent-neon-blue); margin-top: 40px; margin-bottom: 15px;">Tools & DevOps</h3>
+                <div class="skills" style="justify-content: center;">
+                    <div class="skill"><i class="fa-brands fa-git-alt"></i> Git/GitHub</div>
+                    <div class="skill"><i class="fa-brands fa-docker"></i> Docker</div>
+                    <div class="skill"><i class="fa-solid fa-cloud"></i> AWS/DigitalOcean</div>
+                    <div class="skill"><i class="fa-solid fa-bug"></i> Testing/CI/CD</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Professional Experience & Milestones</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
+                    <div class="content">
+                        <h4><i class="fa-solid fa-seedling"></i> Founder & Lead Developer, Trendzia.co</h4>
+                        <p class="timeline-date">2023 – Present</p>
+                        <p>Established and scaled an e-commerce platform handling significant monthly transactions. **Led the full-stack architecture** (Flutter/Node.js) and implemented secure payment systems.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="200">
+                    <div class="content">
+                        <h4><i class="fa-solid fa-message"></i> Lead Flutter Developer, Vaatchit App</h4>
+                        <p class="timeline-date">2022 – Present</p>
+                        <p>Conceptualized and built a secure, real-time messaging application. Focus on **low latency** using WebSockets, **end-to-end encryption**, and efficient media sharing protocols.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="300">
+                    <div class="content">
+                        <h4><i class="fa-solid fa-mobile-screen-button"></i> Software Engineer (Mobile Focus)</h4>
+                        <p class="timeline-date">2020 – 2022</p>
+                        <p>Contributed to high-traffic client projects. Specialized in advanced **state management (Bloc/Provider)** and integrating complex enterprise-level REST APIs into commercial applications.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="400">
+                    <div class="content">
+                        <h4><i class="fa-solid fa-graduation-cap"></i> Academic & Core Development Foundation</h4>
+                        <p class="timeline-date">Pre-2020</p>
+                        <p>Established strong fundamentals in **Data Structures, Algorithms**, and core web technologies (HTML, CSS, JavaScript) that underpin all modern development.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="startups" data-aos="zoom-in" data-aos-duration="1000">
+            <h2>My Entrepreneurial Ventures</h2>
+            <div class="cards-row">
+                <div class="startup-card" data-aos="flip-up" data-aos-delay="100">
+                    <h3 class="card-title"><i class="fa-solid fa-cart-shopping"></i> Trendzia.co</h3>
+                    <p>Modern D2C e-commerce platform built on a custom Flutter/Node.js stack. Optimized for mobile sales funnel and high conversion rates.</p>
+                    <ul>
+                        <li><span style="color:var(--accent-neon-blue);">→</span> Multi-currency & Localization support</li>
+                        <li><span style="color:var(--accent-neon-blue);">→</span> Custom Admin Dashboard for metrics</li>
+                        <li><span style="color:var(--accent-neon-blue);">→</span> Performance benchmark: 95+ PageSpeed score</li>
+                    </ul>
+                    <a href="https://chat.whatsapp.com/BBYNxlfBFP784qpejkywhc" target="_blank" rel="noopener noreferrer">Visit Trendzia Group →</a>
+                </div>
+                <div class="startup-card" data-aos="flip-up" data-aos-delay="300">
+                    <h3 class="card-title"><i class="fa-solid fa-comment"></i> Vaatchit App</h3>
+                    <p>A demonstration of scalable real-time communication technology. Utilizes WebSockets and robust security protocols for private communication.</p>
+                    <ul>
+                        <li><span style="color:var(--accent-neon-blue);">→</span> Offline Message Syncing</li>
+                        <li><span style="color:var(--accent-neon-blue);">→</span> Scalable Chat Room Architecture</li>
+                        <li><span style="color:var(--accent-neon-blue);">→</span> Low Latency media streaming</li>
+                    </ul>
+                    <a href="#" target="_blank" rel="noopener">Learn More →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" data-aos="fade-up" data-aos-duration="1000">
+            <h2>How I Can Help Your Business</h2>
+            <div class="cards-row">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="card-title"><i class="fa-brands fa-flutter"></i> Cross-Platform App Dev</h3>
+                    <p>End-to-end development of native-quality mobile apps (iOS/Android) using Flutter. Focus on scalable architecture (Bloc/Provider) and complex feature implementation.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="card-title"><i class="fa-solid fa-globe"></i> Full-Stack Web Applications</h3>
+                    <p>Building high-speed, modern web solutions, from robust Node.js APIs and database design to elegant React/Next.js frontends.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <h3 class="card-title"><i class="fa-solid fa-rocket"></i> MVP & Startup Prototyping</h3>
+                    <p>Rapid development and launch of Minimum Viable Products (MVPs). Turn your concept into a fully functional product ready for market validation in weeks.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" data-aos="fade-up" data-aos-duration="1000">
+            <h2>What Clients Say</h2>
+            <div class="cards-row">
+                <div class="testimonial-card" data-aos="flip-up" data-aos-delay="100">
+                    <p>"Parth's ability to foresee scaling issues saved us months of rework. His Flutter architecture is clean, fast, and remarkably stable. A true professional."</p>
+                    <!-- <p class="testimonial-author">— CEO of a SaaS Company</p> -->
+                </div>
+                <div class="testimonial-card" data-aos="flip-up" data-aos-delay="300">
+                    <p>"We hired Parth for a complex chat integration. Not only was the feature delivered ahead of schedule, but the code quality was exceptional. Highly recommend for any real-time project."</p>
+                    <!-- <p class="testimonial-author">— Product Manager at Global Tech</p> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" data-aos="fade-up" data-aos-duration="1000" style="text-align: center;">
+            <h2>Let's Build Something Excellent</h2>
+            <p style="font-size:17px; margin-bottom: 30px; max-width: 600px; margin: 30px auto; color: var(--text-light);">
+                Whether you need a full-scale mobile application, a scalable web platform, or guidance on your next startup, I'm ready to collaborate. Reach out for a detailed proposal.
+            </p>
+            <p style="margin-bottom: 15px;">
+                <span style="color:var(--accent-neon-pink); font-family:'Fira Code', monospace;">// Email:</span>
+                <a href="mailto:parthbambawala123@gmail.com" style="color:var(--accent-neon-blue); font-size: 18px; font-weight: bold;">parthbambawala123@gmail.com</a>
+            </p>
+            <p style="margin-bottom: 30px;">
+                <span style="color:var(--accent-neon-pink); font-family:'Fira Code', monospace;">// Phone:</span>
+                <a href="tel:+919104974046" style="color:var(--accent-neon-blue); font-size: 18px; font-weight: bold;">+91 91049 74046</a>
+            </p>
+            <a class="cta-btn" href="https://wa.me/919104974046" target="_blank" rel="noopener noreferrer" style="padding: 15px 30px; font-size: 18px;">
+                <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Send a Direct Inquiry
+            </a>
+        </section>
+
+        <footer>
+            <p>Code & Design by Parth Ambawala | All Rights Reserved.</p>
+        </footer>
+
     </div>
 
-    <!-- ABOUT -->
-    <section id="about" data-aos="fade-up">
-      <h2>About Me</h2>
-      <p style="font-size:17px;">I create high-performance mobile apps and websites for businesses. I run two startups — <strong>Trendzia.co</strong> (E-Commerce) and <strong>Vaatchit App</strong> (Messaging) — combining technology and entrepreneurship to deliver impactful digital solutions.</p>
-    </section>
-
-    <!-- STARTUPS -->
-    <section id="startups" data-aos="zoom-in">
-      <h2>My Startups</h2>
-      <div class="cards-row">
-        <div class="startup-card">
-          <h3>Trendzia.co</h3>
-          <p>An e-commerce platform redefining online shopping with curated products, smooth UX, and secure payments.</p>
-          <ul>
-            <li>Modern online storefronts</li>
-            <li>Mobile-first shopping</li>
-            <li>Secure payment gateways</li>
-          </ul>
-          <a class="cta-btn" href="https://trendzia.co/" target="_blank" rel="noopener">Visit Trendzia</a>
-        </div>
-        <div class="startup-card">
-          <h3>Vaatchit App</h3>
-          <p>A secure and fast chat application built for modern communication, supporting groups, media sharing, and real-time messaging.</p>
-          <ul>
-            <li>Private & group chats</li>
-            <li>Media sharing</li>
-            <li>Fast & secure</li>
-          </ul>
-          <a class="cta-btn" href="#" target="_blank" rel="noopener">Learn More</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" data-aos="fade-up">
-      <h2>Projects</h2>
-      <p style="font-size:17px;">Projects will load dynamically from Firebase...</p>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" data-aos="fade-up">
-      <h2>Services</h2>
-      <div class="cards-row">
-        <div class="service-card"><h3>App Development</h3><p>Custom apps with payments & backend integration.</p></div>
-        <div class="service-card"><h3>E-Commerce Solutions</h3><p>Shopify, WooCommerce, and custom builds.</p></div>
-        <div class="service-card"><h3>Chat Applications</h3><p>Secure, real-time messaging apps for businesses.</p></div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" data-aos="fade-up">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:parthbambawala123@gmail.com" style="color:var(--accent1);">parthbambawala123@gmail.com</a></p>
-      <p>Phone: <a href="tel:+919104974046" style="color:var(--accent1);">+91 91049 74046</a></p>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2025 Parth Ambawala — Founder of Trendzia.co & Vaatchit App</p>
-    </footer>
-
-  </div>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+    </script>
 </body>
 </html>
