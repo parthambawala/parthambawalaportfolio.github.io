@@ -19,7 +19,7 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
     <style>
-        /* --- CYBER-FLUX THEME V3.4 VARIABLES --- */
+        /* --- CYBER-FLUX THEME V3.5 VARIABLES --- */
         :root {
             --bg-dark: #000000;
             --bg-darker: #0c001c;
@@ -216,67 +216,117 @@
         /* ======================================= */
         @media (max-width: 768px) {
             /* GENERAL LAYOUT & PADDING */
-            .container { padding: 10px; }
-            section { padding: 0; margin-top: 60px; }
-            section:nth-child(even) { padding: 40px 10px; margin-left: -10px; margin-right: -10px; }
-            h2 { font-size: 32px; margin-bottom: 30px; }
+            .container { padding: 0; } /* Remove container padding entirely */
+            section { padding: 0 15px; margin-top: 50px; } /* Use internal section padding */
+            section:nth-child(even) { padding: 40px 15px; margin-left: 0; margin-right: 0; border-radius: 0; }
+            h2 { font-size: 30px; margin-bottom: 25px; }
 
-            /* HEADER & NAVIGATION */
+            /* HEADER & NAVIGATION (Crucial Mobile Fix) */
             header {
-                padding: 10px; top: 0; margin-bottom: 30px;
-                /* Allow header to stack items vertically if needed */
+                padding: 10px 15px; top: 0; margin-bottom: 30px;
                 flex-direction: column;
                 align-items: flex-start;
+                border-left: none;
+                border-right: none;
+                border-radius: 0; /* Remove rounded corners for full-width sticky look */
             }
-            .logo { margin-bottom: 10px; }
+            .logo { margin-bottom: 0; }
+
+            /* Horizontal Scrollable Nav Bar (Secondary links) */
             nav {
-                /* Navigation links stacked horizontally */
                 width: 100%;
-                justify-content: space-around;
-                gap: 5px;
+                overflow-x: auto; /* Allows horizontal scrolling */
+                -webkit-overflow-scrolling: touch;
+                justify-content: flex-start;
+                gap: 15px;
+                padding: 5px 0;
             }
-            nav a { font-size: 14px; padding: 5px 0; }
-            .cta-btn { margin-left: 0; padding: 8px 15px; font-size: 14px; }
-            
+            nav a { font-size: 14px; padding: 5px 0; flex-shrink: 0; }
+            .cta-btn { 
+                position: fixed; /* Keep CTA visible */
+                bottom: 20px; 
+                right: 20px;
+                z-index: 1000;
+                padding: 15px 25px; 
+                font-size: 16px; 
+                box-shadow: 0 5px 15px rgba(255, 0, 255, 0.9);
+                /* Remove CTA from the horizontal nav flow */
+                display: none; /* Hide the smaller one in favor of the large fixed one */
+            }
+
             /* HERO SECTION */
             .hero {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 20px;
+                padding-bottom: 30px;
             }
             .image-card {
-                order: -1; /* Place image first on mobile */
-                height: 350px; /* Reduced height for mobile */
-                margin-bottom: 20px;
+                order: -1;
+                height: 320px; 
+                margin-bottom: 0;
+                border-radius: 0; /* Make it full width if possible */
             }
             .text-card {
-                padding: 30px 20px; /* Reduced card padding */
+                padding: 25px 15px; /* Reduced card padding for density */
+                border-radius: 0;
+                margin: 0 15px;
             }
             .main-title {
-                font-size: 36px; /* Reduced title size */
+                font-size: 34px; 
                 margin-top: 0;
             }
 
             /* SKILLS WRAPPING */
-            .skills { justify-content: flex-start; }
+            .skills { 
+                justify-content: flex-start; 
+                gap: 8px;
+            }
             .skill {
-                padding: 7px 12px;
-                font-size: 13px;
+                padding: 6px 10px;
+                font-size: 12px;
             }
 
-            /* TIMELINE (Existing Mobile Fixes - Ensure these remain) */
-            .timeline::after { left: 20px; }
-            .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
-            .timeline-item::after { left: 10px; right: auto; margin-left: 0; top: 25px; }
+            /* TIMELINE */
+            .timeline::after { left: 10px; }
+            .timeline-item { width: 100%; padding-left: 35px; padding-right: 5px; }
+            .timeline-item::after { left: 0px; right: auto; top: 20px; }
             .right { left: 0%; }
-            .right::after { left: 10px; } 
+            .right::after { left: 0px; } 
 
-            /* CARDS (Startups/Services) */
+            /* CARDS (Startups/Services/Testimonials) */
             .startup-card, .service-card, .project-card, .testimonial-card {
-                /* Cards take full width with appropriate padding */
                 min-width: 100%;
                 max-width: 100%;
+                margin: 0;
+                padding: 20px;
             }
-            .cards-row { gap: 20px; }
+            .cards-row { gap: 15px; }
+
+            /* CONTACT SECTION */
+            #contact { padding: 0 15px; }
+            
+            /* Add fixed contact button for quick access on mobile */
+            .fixed-whatsapp-btn {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                padding: 15px 25px;
+                font-size: 16px;
+                z-index: 1000;
+                /* Re-using the CTA styling */
+                background: var(--accent-neon-pink); color: var(--bg-dark);
+                border-radius: 999px;
+                font-weight: 700; 
+                box-shadow: 0 5px 20px rgba(255, 0, 255, 0.9);
+            }
+            /* The contact button in the contact section should be the standard large one */
+            #contact .cta-btn {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin: 0;
+                display: inline-block; /* Show standard contact button */
+            }
         }
     </style>
 </head>
@@ -342,7 +392,7 @@
                     <div class="skill"><i class="fa-solid fa-database"></i> SQL (PostgreSQL/MySQL)</div>
                     <div class="skill"><i class="fa-solid fa-cube"></i> REST/GraphQL</div>
                 </div>
-                <h3 style="color:var(--accent-neon-blue); margin-top: 40px; margin-bottom: 15px;">Tools & DevOps</h3>
+                <h3 style="color:var(--accent-neon-pink); margin-top: 40px; margin-bottom: 15px;">Tools & DevOps</h3>
                 <div class="skills" style="justify-content: center;">
                     <div class="skill"><i class="fa-brands fa-git-alt"></i> Git/GitHub</div>
                     <div class="skill"><i class="fa-brands fa-docker"></i> Docker</div>
@@ -466,6 +516,10 @@
                 <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Send a Direct Inquiry
             </a>
         </section>
+
+        <a class="fixed-whatsapp-btn" href="https://wa.me/919104974046" target="_blank" rel="noopener noreferrer">
+             <i class="fa-brands fa-whatsapp"></i> Chat Now
+        </a>
 
         <footer>
             <p>Code & Design by Parth Ambawala | All Rights Reserved.</p>
